@@ -129,21 +129,17 @@
 
 .wd-post-with-image{
     width: 85%;
-
     float: left;
 }
 
 .wd-posts-image-container{
     width: 15%;
-
     float: right;
 }
 
 .wd-post-image {
-
     width: 100%;
     border-radius: 10px;
-
 }
 
 .wd-topic {
@@ -151,7 +147,6 @@
     color: gray;
     width: 100%;
     height: auto;
-
 }
 
 .wd-author {
@@ -159,7 +154,6 @@
     font-size: 16px;
     color: white;
     height: auto;
-
 }
 
 .wd-content {
@@ -167,7 +161,6 @@
     height: auto;
     font-size: 16px;
     color: white;
-
 }
 
 .wd-time{
