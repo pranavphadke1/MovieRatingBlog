@@ -1,0 +1,146 @@
+.wd-icon {
+    float: left;
+}
+
+.wd-suggested-follow {
+    height: 60px;
+}
+
+.wd-profile-pic-container{
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+
+.wd-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.wd-follow-info{
+    width: 80%;
+    height: 100%;
+}
+
+.wd-profile-name{
+    width: 100%;
+    font-size: 12px;
+    color: white;
+}
+
+.wd-certificate {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.wd-handle-name{
+    font-size: 12px;
+    width: 100%;
+    color: lightgray;
+}
+
+
+.wd-follow{
+    border-radius: 40px;
+    right: 6px;
+    top:17%;
+}
+
+.wd-list-group-override {
+    border-radius: 20px;
+}
+
+.wd-post-container{
+    height: auto;
+}
+
+
+.wd-post-with-image{
+    width: 85%;
+    float: left;
+}
+
+.wd-topic {
+    font-size: 14px;
+    color: gray;
+    width: 100%;
+    height: auto;
+}
+
+.wd-author {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    height: auto;
+}
+
+.wd-time{
+    color: gray;
+    font-size: 14px;
+}
+
+.wd-content {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    color: white;
+}
+
+.wd-posts-image-container{
+    width: 15%;
+    float: right;
+}
+
+.wd-post-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.wd-search-bar-area {
+    width: 100%;
+    height: 40px;
+    border: none;
+    margin: 5px 0px  0px 0px;
+}
+
+.wd-magnify-glass {
+    font-size: 20px;
+    top: 15px;
+    left: 20px;
+    z-index: 1;
+}
+
+.wd-search-bar {
+    width: 90%;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.wd-gear {
+    position: absolute;
+    text-decoration: none;
+    font-size: 30px;
+    vertical-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+.wd-image{
+    width: 100%;
+    height: auto;
+}
+
+.wd-image-text{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: white;
+    font-size: xx-large;
+}
