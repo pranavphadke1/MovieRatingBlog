@@ -8,7 +8,6 @@ const WhatsHappening = () => {
     const [newTuit, setNewTuit] =
         useState({
                      tuit: "New Tuit!",
-                     _id: (new Date()).getTime() + '',
                      topic: "",
                      postedBy: {
                          username: "Pranav Phadke",
