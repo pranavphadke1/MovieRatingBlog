@@ -27,7 +27,7 @@ const ExploreComponent = () => {
            </ul>
            <div class="list-group">
                <li class="list-group-item p-0 position-relative">
-                    <img src="../src/spaceXStarship.png" class="wd-image">
+                    <img src="../Images/spaceXStarship.png" class="wd-image">
                     <label class="wd-image-text">SpaceX's Starship</label>
                 </li>
             </div>
