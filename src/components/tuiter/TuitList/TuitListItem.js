@@ -18,7 +18,8 @@ const TuitListItem = ({
                           "stats": {
                               "comments": 123,
                               "retuits": 234,
-                              "likes": 345
+                              "likes": 345,
+                              "dislikes": 11
                           }
                       }
                   }) => {
