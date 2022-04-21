@@ -12,13 +12,13 @@ const NavigationSidebar = ({
                       className="list-group-item ">
                     <i className="fab fa-twitter fa-lg p-1"></i>
                 </Link>
-                <Link to="/tuiter/home"
-                   className={`list-group-item list-group-item-action ${active === 'home' ? 'active'
+                <Link to="/tuiter"
+                   className={`list-group-item list-group-item-action ${active === '/tuiter' ? 'active'
                                                                                          : ''}`}>
                     <i className="fas fa-home fa-lg p-1 wd-icon"></i> <span
                     className="d-none d-xl-block">Home</span></Link>
                 <Link to="/tuiter/explore"
-                   className={`list-group-item  list-group-item-action ${active === 'explore'
+                   className={`list-group-item  list-group-item-action ${active === '/tuiter/explore'
                                                                          ? 'active'
                                                                          : ''}`}>
                     <i className="fas fa-hashtag fa-lg p-1 wd-icon"></i> <span
@@ -45,8 +45,8 @@ const NavigationSidebar = ({
                                                                                           : ''}`}>
                     <i className="fas fa-list fa-lg p-1 wd-icon"></i> <span
                     className="d-none d-xl-block">Lists</span></Link>
-                <Link to="#"
-                   className={`list-group-item  list-group-item-action ${active === 'profile'
+                <Link to="/tuiter/profile"
+                   className={`list-group-item  list-group-item-action ${active === '/tuiter/profile'
                                                                          ? 'active'
                                                                          : ''}`}>
                     <i className="fas fa-user fa-lg p-1 wd-icon"></i> <span

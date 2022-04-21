@@ -71,6 +71,10 @@
     height: auto;
 }
 
+.wd-postItem-video{
+    width: 100%;
+}
+
 .wd-round-top{
     border: #6e767d solid 1px;
     border-top-right-radius: 20px;
@@ -91,4 +95,42 @@
 
 .wd-icon-colors {
     color: gray;
+}
+
+.wd-whats-happening-content-container{
+    width: 85%;
+    float: right;
+    border: 0;
+
+}
+
+.wd-whats-happening-textarea {
+    width: 100%;
+    min-height: 80px;
+    border: #6e767d 1px solid;
+    color: #6e767d;
+    background-color: transparent;
+}
+
+.wd-whats-happening-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.wd-tuit-icon {
+    color: deepskyblue;
+    margin-right: 15px;
+}
+
+.wd-tuit-button {
+    width: 80px;
+    color: white;
+    background-color: deepskyblue;
+    border: none;
+}
+
+.wd-remove{
+    position: absolute;
+    left: 92%;
+    top: 20px;
 }
