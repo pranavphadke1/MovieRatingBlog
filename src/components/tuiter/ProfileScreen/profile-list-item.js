@@ -29,7 +29,7 @@ const ProfileListItem = ({
             </div>
 
             <div className="wd-edit-profile-container">
-                <Link to="/tuiter/edit-profile">
+                <Link to="/edit-profile">
                     <button className="float-end rounded-pill wd-edit-profile">
                         Edit profile
                     </button>

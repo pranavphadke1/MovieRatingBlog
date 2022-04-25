@@ -35,11 +35,11 @@ const EditProfileListItem = ({
         <div className="list-group-item wd-whats-happening-container">
             <div className="mt-1 mb-1 ">
                 <h5 className="m-0 wd-edit-profile-top">
-                    <Link to="/tuiter/profile">
+                    <Link to="/profile">
                         <i className="fas fa-window-close float-start ps-2 pe-4"/>
                     </Link>
                     Edit Profile
-                    <Link to="/tuiter/profile">
+                    <Link to="/profile">
                         <button className="float-end rounded-pill wd-save"
                                 onClick={saveClickHandler}>
                             Save
