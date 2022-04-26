@@ -23,4 +23,3 @@ export const updateUser = async (user) => {
         .put(`${USERS_API}/${user._id}`, user);
     return response.data;
 }
-

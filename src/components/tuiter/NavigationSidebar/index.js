@@ -58,9 +58,9 @@ const NavigationSidebar = ({
                     className="d-none d-xl-block">More</span></Link>
             </div>
             <div className="d-grid mt-2">
-                <a href="tweet.html"
+                <Link to="/"
                    className="btn btn-primary btn-block rounded-pill">
-                    Tweet</a>
+                    Tweet</Link>
             </div>
         </>
     )
