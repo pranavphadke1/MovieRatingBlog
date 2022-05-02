@@ -1,13 +1,5 @@
 <<<<<<< HEAD
 # MovieRatingBlog
-=======
-<<<<<<< HEAD
-# TuiterProject
-
-Project replicated Twitter. Allows creating, updating, and deleting Posts that are stored in a mongodb server.
-- Related Repository is TuiterProjectServer that contains the Node/Express backend and connectivity to the mongo server.
-
-
 
 =======
 # Getting Started with Create React App
