@@ -1,36 +1,54 @@
 import './vendors/bootstrap/css/bootstrap.min.css';
 import './vendors/bootstrap/bootstrap.min.css';
 import './vendors/fontawesome/css/all.min.css';
-import {BrowserRouter, Route, Routes}
-    from "react-router-dom";
-import './components/tuiter/explore.css'
-import './components/tuiter/home.css'
-import './components/tuiter/profile.css'
-import HomeScreen from "./components/tuiter/HomeScreen";
-import ExploreScreen from "./components/tuiter/ExploreScreen/ExploreComponent";
-import ProfileScreen from "./components/tuiter/ProfileScreen";
-import Tuiter from "./components/tuiter";
-import EditProfileScreen from "./components/tuiter/EditProfile";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {ProfileProvider} from "./context/profile-context";
+import SecureRoute from "./components/Secure/SecureRoute";
+import './components/Blog/explore.css'
+import './components/Blog/home.css'
+import './components/Blog/profile.css'
+import HomeScreen from "./components/Blog/HomeScreen";
+import LoggedInProfileScreen from "./components/Screens/Profile/loggedInProfile";
+import Blog from "./components/Blog";
+import OmdbSearch from "./components/Screens/omdb-search";
+import Signup from "./components/Screens/signup";
+import Signin from "./components/Screens/signin";
+import OmdbDetails from "./components/Screens/omdb-details";
+import EditUsersScreen from "./components/Screens/all-users";
+import ProfileScreen from "./components/Screens/Profile/ProfileScreen";
 
 function App() {
     return (
-        <BrowserRouter>
-            <div className="container">
-                <Routes>
-                    <Route path="/" element={<Tuiter/>}>
-                        <Route index
-                               element={<HomeScreen/>}/>
-                        <Route path="explore"
-                               element={<ExploreScreen/>}/>
-                        <Route path="profile"
-                               element={<ProfileScreen/>}/>
-                        <Route path="edit-profile"
-                               element={<EditProfileScreen/>}/>
+        <ProfileProvider>
+            <BrowserRouter>
+                <div className="container">
+                    <Routes>
+                        <Route path="/" element={<Blog/>}>
+                            <Route index
+                                   element={<HomeScreen/>}/>
+                            <Route path="signup" element={<Signup/>}/>
+                            <Route path="signin" element={<Signin/>}/>
+                            <Route path="profile"
+                                   element={
+                                       <SecureRoute>
+                                           <LoggedInProfileScreen/>
+                                       </SecureRoute>
+                                   }/>
+                            <Route path="profile/:pID"
+                                   element={<ProfileScreen/>}/>
+                            <Route path="search" element={<OmdbSearch/>}/>
+                            <Route path="search/:movieSearch" element={<OmdbSearch/>}/>
+                            <Route path="/details/:imdbID" element={<OmdbDetails/>}/>
+                            <Route path="allUsers"
+                                   element={
+                                           <EditUsersScreen/>
+                                   }/>
 
-                    </Route>
-                </Routes>
-            </div>
-        </BrowserRouter>
+                        </Route>
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </ProfileProvider>
     );
 }
 
