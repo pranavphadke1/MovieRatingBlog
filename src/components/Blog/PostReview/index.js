@@ -21,7 +21,6 @@ const PostReview = ({
                      },
                      review: "",
                      likes: 0,
-                     dislikes: 0,
                  });
 
     const [movieDetails, setMovieDetails] = useState({})
@@ -48,7 +47,7 @@ const PostReview = ({
     }, [])
 
     return (
-        <div className="list-group-item wd-whats-happening-container mb-5">
+        <div className="list-group-item wd-whats-happening-container">
             <div className="p-3 wd-post-container">
                 <textarea className="review-textarea" placeholder="My Review"
                           onChange={(e) =>

@@ -8,8 +8,8 @@ const RenderAllReviewedMovies = () => {
     const getOurMovies = async () => {
         const response = await axios.get('http://localhost:4000/api/movies')
         setReviewedMovies(response.data.filter(m => m.reviews > 0));
-        setPositiveMovies(response.data.filter(m => m.likes >= m.dislikes))
-        setNegativeMovies(response.data.filter(m => m.likes < m.dislikes))
+        setPositiveMovies(response.data.filter(m => m.likes > 0))
+        setNegativeMovies(response.data.filter(m => m.likes < 0))
 
     }
     useEffect(() => {
@@ -19,7 +19,7 @@ const RenderAllReviewedMovies = () => {
     return (
         <ul className="list-group wd-list-group-override">
             <li className="list-group-item">
-                All Reviewed Reviews
+                Movies with Reviews
             </li>
             {reviewedMovies &&
              reviewedMovies.map(movie =>

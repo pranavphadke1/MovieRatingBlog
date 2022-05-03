@@ -8,8 +8,6 @@ const ReviewItem = ({
                             movieID: "",
                             postedBy: {userID: "111"},
                             review: "",
-                            likes: 0,
-                            dislikes: 0
                         }
                     }
 ) => {
@@ -28,7 +26,7 @@ const ReviewItem = ({
                 <div className="wd-content">
                     <div className="wd-content"> {review && review.review}</div>
                     <Link to={`/profile/${review && review.postedBy.userID}`}>
-                        <div className="wd-time"> By : {user && user.firstName} {user && user.lastName}</div>
+                         By : {user && user.firstName} {user && user.lastName}
                     </Link>
 
                 </div>

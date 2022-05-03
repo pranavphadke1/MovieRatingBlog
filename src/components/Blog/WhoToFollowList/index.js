@@ -16,7 +16,7 @@ const WhoToFollowList = () => {
             </li>
 
             {
-                users.map(user => {
+                users.filter(u => u.role == 'REVIEWER').map(user => {
                     return (<WhoToFollowListItem who={user}/>);
                 })
             }

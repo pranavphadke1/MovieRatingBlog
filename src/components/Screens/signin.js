@@ -23,6 +23,7 @@ const Signin = () => {
             <h1>Signin</h1>
             <input ref={emailRef} placeholder="email" className="form-control" type="email"/>
             <input ref={passwordRef} placeholder="password" className="form-control" type="password"/>
+            <hr/>
             <button onClick={handleSignin} className="btn btn-primary">
                 Signin
             </button>

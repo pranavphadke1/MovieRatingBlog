@@ -1,34 +1,90 @@
 import {findAllUsers} from "../../../actions/users-actions";
 import {useDispatch, useSelector} from "react-redux";
-import React, {useEffect} from "react";
-import {useParams} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link, useParams} from "react-router-dom";
 import {useProfile} from "../../../context/profile-context";
+import axios from "axios";
+import ReviewItem from "../../Blog/RenderReviews/renderReviewItem";
 
 const AnonUser = () => {
     const {pID} = useParams()
-    const {profile} = useProfile();
     const users = useSelector((state) => state.users);
     const dispatch = useDispatch();
-    useEffect(() =>
-                  findAllUsers(dispatch),
-              []);
+
     const user = users.find(x => x._id == pID);
-    console.log(profile._id)
-    console.log(pID)
+
+    const [positiveMovies, setPositiveMovies] = useState([])
+    const [negativeMovies, setNegativeMovies] = useState([])
+    const [reviewedMovies, setReviewedMovies] = useState([])
+    const getOurMovies = async () => {
+        const response = await axios.get('http://localhost:4000/api/movies')
+        const response2 = await axios.get(`http://localhost:4000/api/users/${pID}`)
+        const response3 = await axios.get('http://localhost:4000/api/reviews')
+        setReviewedMovies(response3.data.filter(r => r.postedBy.userID == pID));
+        const thisUser = response2.data
+        setPositiveMovies(
+            response.data.filter(m => m.likes > 0 && thisUser.likedMovies.includes(m.imdbID)))
+        setNegativeMovies(
+            response.data.filter(m => m.likes < 0 && thisUser.dislikedMovies.includes(m.imdbID)))
+    }
+    useEffect(() => {
+                  findAllUsers(dispatch)
+                  getOurMovies()
+              }, []
+    );
 
     return (
         <div>
-            <h2>{user.firstName} {user.lastName}</h2>
+            <h2>{user && user.firstName} {user && user.lastName}</h2>
             <hr/>
-            <h4>Personal Information</h4>
-            <h5>Followers: {user.followers}</h5>
-            <h5>Following: {user.following.length}</h5>
+            <h4>Handle: {user && user.handle}</h4>
+            <hr/>
+            <ul className="list-group">
+                {reviewedMovies.length>0?
+                 <li className="list-group-item">
+                     All Reviews for Movies
+                 </li> : <div></div>
+                }
 
-            {profile ?
-             <button className="btn btn-primary">
-                 Follow User
-             </button> : <></>
-            }
+                {
+                    reviewedMovies.map(review => {
+                        return (<ReviewItem review={review}/>);
+                    })
+                }
+
+                {positiveMovies.length>0 ?
+                 <li className="list-group-item">
+                     Liked Movies
+                 </li> : <div></div>
+                }
+                {positiveMovies &&
+                 positiveMovies.map(movie =>
+                                        <li className="list-group-item">
+                                            <Link to={`/details/${movie.imdbID}`}>
+                                                <img src={movie.poster} className="me-2" height={60}/>
+                                                {movie.title}
+                                            </Link>
+                                        </li>
+                 )
+                }
+                {negativeMovies.length>0 ?
+                 <li className="list-group-item">
+                     Disliked Movies
+                 </li> : <div></div>
+                }
+                {negativeMovies &&
+                 negativeMovies.map(movie =>
+                                        <li className="list-group-item">
+                                            <Link to={`/details/${movie.imdbID}`}>
+                                                <img src={movie.poster} className="me-2" height={60}/>
+                                                {movie.title}
+                                            </Link>
+                                        </li>
+                 )
+                }
+            </ul>
+
+
         </div>
     )
 

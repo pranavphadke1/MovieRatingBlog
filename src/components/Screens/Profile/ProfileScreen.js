@@ -6,10 +6,8 @@ import {useProfile} from "../../../context/profile-context";
 const ProfileScreen = () => {
     const {pID} = useParams()
     const {profile} = useProfile();
-    console.log(profile._id)
-    console.log(pID)
     return (
-            profile._id === pID ? <LoggedInProfileScreen/> : <AnonUser/>
+        (profile && profile._id === pID) ? <LoggedInProfileScreen/> : <AnonUser/>
 
     )
 

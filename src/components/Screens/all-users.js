@@ -30,7 +30,7 @@ const EditUsersScreen = () => {
                         users.filter(u=>u.role=='USER').map(user =>
                                       <li className="list-group-item">
                                           <Link to={`/profile/${user._id}`}>
-                                              {user.firstName} {user.lastName}
+                                              {user.handle}
                                           </Link>
                                           {profile && profile.role == 'ADMIN' ?
                                            <button
@@ -48,7 +48,7 @@ const EditUsersScreen = () => {
                         users.filter(u=>u.role=='REVIEWER').map(user =>
                                       <li className="list-group-item">
                                           <Link to={`/profile/${user._id}`}>
-                                              {user.firstName} {user.lastName}
+                                              {user.handle}
                                           </Link>
                                           {profile && profile.role == 'ADMIN' ?
                                            <button

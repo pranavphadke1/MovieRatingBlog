@@ -10,7 +10,7 @@ const RenderReviewsForMovie = (movieID = "000") => {
         ,
               []);
     return (
-        <ul className="list-group wd-list-group-override">
+        <ul className="list-group ">
             <li className="list-group-item">
                 All Reviews for Movie
             </li>
