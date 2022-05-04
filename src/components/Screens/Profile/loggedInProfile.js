@@ -4,7 +4,7 @@ import {useProfile} from "../../../context/profile-context";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {signin} from "../../../services/auth-service";
-import ReviewItemLinkedToMovie from "../../Blog/RenderReviews/renderReviewItemLinkedToMovie";
+import ReviewItemLinkedToMovie from "../../MovieReviewBlog/RenderReviews/renderReviewItemLinkedToMovie";
 
 const LoggedInProfileScreen = () => {
     const {profile} = useProfile()
@@ -59,16 +59,20 @@ const LoggedInProfileScreen = () => {
             <h6>Email: {profile.email}</h6>
 
             <input onChange={(e) => setInfo({...info, firstName: e.target.value})}
-                   placeholder={"First Name: " + profile.firstName} className="inputField form-control w-50"
+                   placeholder={"First Name: " + profile.firstName}
+                   className="wd-input-field form-control w-50"
                    type="email"/>
             <input onChange={(e) => setInfo({...info, lastName: e.target.value})}
-                   placeholder={"Last Name: " + profile.lastName} className="inputField form-control w-50"
+                   placeholder={"Last Name: " + profile.lastName}
+                   className="wd-input-field form-control w-50"
                    type="email"/>
             <input onChange={(e) => setInfo({...info, handle: e.target.value})}
-                   placeholder={"Handle: " + profile.handle} className="inputField form-control w-50"
+                   placeholder={"Handle: " + profile.handle}
+                   className="wd-input-field form-control w-50"
                    type="email"/>
             <input onChange={(e) => setInfo({...info, password: e.target.value})}
-                   placeholder={"Password: " + profile.password} className="inputField form-control w-50"
+                   placeholder={"Password: " + profile.password}
+                   className="wd-input-field form-control w-50"
                    type="email"/>
 
 
@@ -78,13 +82,12 @@ const LoggedInProfileScreen = () => {
             <hr/>
 
 
-
             <ul className="list-group ">
 
-                {reviewedMovies.length>0?
-                <li className="list-group-item">
-                    All Reviews for Movie
-                </li> : <div></div>
+                {reviewedMovies.length > 0 ?
+                 <li className="list-group-item">
+                     All Reviews for Movie
+                 </li> : <div></div>
                 }
 
                 {
@@ -94,7 +97,7 @@ const LoggedInProfileScreen = () => {
                 }
 
 
-                {positiveMovies.length>0 ?
+                {positiveMovies.length > 0 ?
                  <li className="list-group-item">
                      My Liked Movies
                  </li> : <div></div>
@@ -110,7 +113,7 @@ const LoggedInProfileScreen = () => {
                                         </li>
                  )
                 }
-                {negativeMovies.length>0 ?
+                {negativeMovies.length > 0 ?
                  <li className="list-group-item">
                      My Disliked Movies
                  </li> : <div></div>

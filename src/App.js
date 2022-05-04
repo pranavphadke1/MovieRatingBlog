@@ -4,12 +4,10 @@ import './vendors/fontawesome/css/all.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {ProfileProvider} from "./context/profile-context";
 import SecureRoute from "./components/Secure/SecureRoute";
-import './components/Blog/explore.css'
-import './components/Blog/home.css'
-import './components/Blog/profile.css'
-import HomeScreen from "./components/Blog/HomeScreen";
+import './components/MovieReviewBlog/movieReviewBlog.css'
+import HomeScreen from "./components/MovieReviewBlog/HomeScreen";
 import LoggedInProfileScreen from "./components/Screens/Profile/loggedInProfile";
-import Blog from "./components/Blog";
+import Blog from "./components/MovieReviewBlog";
 import OmdbSearch from "./components/Screens/omdb-search";
 import Signup from "./components/Screens/signup";
 import Signin from "./components/Screens/signin";
@@ -39,11 +37,7 @@ function App() {
                             <Route path="search" element={<OmdbSearch/>}/>
                             <Route path="search/:movieSearch" element={<OmdbSearch/>}/>
                             <Route path="/details/:imdbID" element={<OmdbDetails/>}/>
-                            <Route path="allUsers"
-                                   element={
-                                           <EditUsersScreen/>
-                                   }/>
-
+                            <Route path="allUsers" element={<EditUsersScreen/>}/>
                         </Route>
                     </Routes>
                 </div>

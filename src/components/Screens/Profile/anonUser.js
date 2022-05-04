@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
-import ReviewItemLinkedToMovie from "../../Blog/RenderReviews/renderReviewItemLinkedToMovie";
+import ReviewItemLinkedToMovie from "../../MovieReviewBlog/RenderReviews/renderReviewItemLinkedToMovie";
 
 const AnonUser = () => {
     const {pID} = useParams()
@@ -39,7 +39,7 @@ const AnonUser = () => {
             <h4>Handle: {user && user.handle}</h4>
             <hr/>
             <ul className="list-group">
-                {reviewedMovies.length>0?
+                {reviewedMovies.length > 0 ?
                  <li className="list-group-item">
                      All Reviews for Movies
                  </li> : <div></div>
@@ -51,7 +51,7 @@ const AnonUser = () => {
                     })
                 }
 
-                {positiveMovies.length>0 ?
+                {positiveMovies.length > 0 ?
                  <li className="list-group-item">
                      Liked Movies
                  </li> : <div></div>
@@ -60,13 +60,14 @@ const AnonUser = () => {
                  positiveMovies.map(movie =>
                                         <li className="list-group-item">
                                             <Link to={`/details/${movie.imdbID}`}>
-                                                <img src={movie.poster} className="me-2" height={100}/>
+                                                <img src={movie.poster} className="me-2"
+                                                     height={100}/>
                                                 {movie.title}
                                             </Link>
                                         </li>
                  )
                 }
-                {negativeMovies.length>0 ?
+                {negativeMovies.length > 0 ?
                  <li className="list-group-item">
                      Disliked Movies
                  </li> : <div></div>
@@ -75,7 +76,8 @@ const AnonUser = () => {
                  negativeMovies.map(movie =>
                                         <li className="list-group-item">
                                             <Link to={`/details/${movie.imdbID}`}>
-                                                <img src={movie.poster} className="me-2" height={100}/>
+                                                <img src={movie.poster} className="me-2"
+                                                     height={100}/>
                                                 {movie.title}
                                             </Link>
                                         </li>

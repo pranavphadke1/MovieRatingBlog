@@ -21,8 +21,8 @@ const Signin = () => {
     return (
         <div>
             <h1>Sign In</h1>
-            <input ref={emailRef} placeholder="email" className="inputField form-control" type="email"/>
-            <input ref={passwordRef} placeholder="password" className="inputField form-control" type="password"/>
+            <input ref={emailRef} placeholder="email" className="wd-input-field form-control" type="email"/>
+            <input ref={passwordRef} placeholder="password" className="wd-input-field form-control" type="password"/>
             <hr/>
             <button onClick={handleSignin} className="btn btn-primary">
                 Sign in
