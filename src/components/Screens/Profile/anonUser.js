@@ -36,7 +36,7 @@ const AnonUser = () => {
         <div>
             <h2>{user && user.firstName} {user && user.lastName}</h2>
             <hr/>
-            <h4>Handle: {user && user.handle}</h4>
+            <h4>@{user && user.handle}</h4>
             <hr/>
             <ul className="list-group">
                 {reviewedMovies.length > 0 ?

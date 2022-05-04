@@ -49,7 +49,7 @@ const PostReview = ({
     return (
         <div className="list-group-item wd-whats-happening-container">
             <div className="p-3 wd-post-container">
-                <textarea className="review-textarea" placeholder="My Review"
+                <textarea className="wd-review-textarea" placeholder="My Review"
                           onChange={(e) =>
                               setNewReview({
                                                ...newReview,
@@ -57,7 +57,7 @@ const PostReview = ({
                                                review: e.target.value
                                            })}>
                 </textarea>
-                <button className="float-end rounded-pill review-button"
+                <button className="float-end rounded-pill wd-review-button"
                         onClick={handleReview}>
                     Post
                 </button>

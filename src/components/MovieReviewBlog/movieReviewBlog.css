@@ -53,3 +53,19 @@
     border: none;
     vertical-align: center;
 }
+
+.wd-review-button {
+    width: 80px;
+    color: white;
+    background-color: deepskyblue;
+    border: none;
+    vertical-align: center;
+}
+
+.wd-review-textarea {
+    width: 80%;
+    min-height: 80px;
+    border: #6e767d 1px solid;
+    color: #6e767d;
+    background-color: transparent;
+}
