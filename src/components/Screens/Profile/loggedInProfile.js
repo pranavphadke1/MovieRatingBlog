@@ -4,11 +4,12 @@ import {useProfile} from "../../../context/profile-context";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {signin} from "../../../services/auth-service";
-import ReviewItem from "../../Blog/RenderReviews/renderReviewItem";
+import ReviewItemLinkedToMovie from "../../Blog/RenderReviews/renderReviewItemLinkedToMovie";
 
 const LoggedInProfileScreen = () => {
     const {profile} = useProfile()
     const navigate = useNavigate()
+
     const logout = async () => {
         await service.logout()
         navigate('/signin')
@@ -46,28 +47,32 @@ const LoggedInProfileScreen = () => {
     return (
         <div>
             <h1>Profile</h1>
-            <button className="btn btn-danger"
-                    onClick={logout}>Logout
-            </button>
+            <h5>
+                @{profile.handle}
+                <button className="btn btn-danger rounded-pill float-end"
+                        onClick={logout}>Logout
+                </button>
+            </h5>
+
             <hr/>
             <h4>Personal Information</h4>
             <h6>Email: {profile.email}</h6>
 
             <input onChange={(e) => setInfo({...info, firstName: e.target.value})}
-                   placeholder={"First Name: " + profile.firstName} className="form-control w-75"
+                   placeholder={"First Name: " + profile.firstName} className="inputField form-control w-50"
                    type="email"/>
             <input onChange={(e) => setInfo({...info, lastName: e.target.value})}
-                   placeholder={"Last Name: " + profile.lastName} className="form-control w-75"
+                   placeholder={"Last Name: " + profile.lastName} className="inputField form-control w-50"
                    type="email"/>
             <input onChange={(e) => setInfo({...info, handle: e.target.value})}
-                   placeholder={"Handle: " + profile.handle} className="form-control w-75"
+                   placeholder={"Handle: " + profile.handle} className="inputField form-control w-50"
                    type="email"/>
             <input onChange={(e) => setInfo({...info, password: e.target.value})}
-                   placeholder={"Password: " + profile.password} className="form-control w-75"
+                   placeholder={"Password: " + profile.password} className="inputField form-control w-50"
                    type="email"/>
 
 
-            <button onClick={updateInfo} className="btn btn-primary">
+            <button onClick={updateInfo} className="rounded-pill btn btn-primary">
                 Update Info
             </button>
             <hr/>
@@ -84,7 +89,7 @@ const LoggedInProfileScreen = () => {
 
                 {
                     reviewedMovies.map(review => {
-                        return (<ReviewItem review={review}/>);
+                        return (<ReviewItemLinkedToMovie review={review}/>);
                     })
                 }
 

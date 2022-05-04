@@ -12,7 +12,7 @@ const WhoToFollowList = () => {
     return (
         <ul className="list-group wd-list-group-override">
             <li className="list-group-item">
-                Popular Reviewers
+                Active Reviewers
             </li>
 
             {

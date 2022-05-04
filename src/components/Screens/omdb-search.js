@@ -23,7 +23,7 @@ const OmdbSearch = () => {
     return (
         <div>
             <h1>Search a Movie!</h1>
-            <ul className="list-group">
+            <ul className="list-group wd-list-group-override">
                 <li className="list-group-item">
                     <button
                         onClick={searchByTitle}

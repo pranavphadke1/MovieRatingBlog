@@ -20,12 +20,12 @@ const Signin = () => {
     }
     return (
         <div>
-            <h1>Signin</h1>
-            <input ref={emailRef} placeholder="email" className="form-control" type="email"/>
-            <input ref={passwordRef} placeholder="password" className="form-control" type="password"/>
+            <h1>Sign In</h1>
+            <input ref={emailRef} placeholder="email" className="inputField form-control" type="email"/>
+            <input ref={passwordRef} placeholder="password" className="inputField form-control" type="password"/>
             <hr/>
             <button onClick={handleSignin} className="btn btn-primary">
-                Signin
+                Sign in
             </button>
         </div>
     );

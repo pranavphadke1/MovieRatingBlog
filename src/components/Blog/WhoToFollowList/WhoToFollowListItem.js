@@ -6,6 +6,7 @@ const WhoToFollowListItem = ({
                                  who = {
                                      firstName: 'fn',
                                      lastName: 'ln',
+                                     handle: '@'
                                  }
                              }
 ) => {
@@ -14,8 +15,9 @@ const WhoToFollowListItem = ({
         <li className="list-group-item  position-relative">
             <div className="wd-content wd-post-container">
                 <li className="list-group-item border-0 w-75 p-1">
-                    <Link to={`/profile/${who._id}`}>
-                        {who.handle}
+                    <Link className="text-decoration-none" to={`/profile/${who._id}`}>
+                        <h6 className="mt-1 mb-1">{who.firstName} {who.lastName}</h6>
+                        @{who.handle}
                     </Link>
                 </li>
             </div>

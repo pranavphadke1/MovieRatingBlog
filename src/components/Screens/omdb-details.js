@@ -10,12 +10,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {findAllMovies} from "../../actions/movies-actions";
 
 const OmdbDetails = () => {
-    const [status, setStatus] = useState({})
+    const [status, setStatus] = useState("NEITHER")
     const [movieDetails, setMovieDetails] = useState({})
 
     const url = 'http://www.omdbapi.com/?apikey=852159f0'
     const {imdbID} = useParams()
     let {profile} = useProfile()
+    const {signin} = useProfile()
     const [info, setInfo] =
         useState(profile);
     const searchMovieByImdbID = async () => {
@@ -25,14 +26,16 @@ const OmdbDetails = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         searchMovieByImdbID()
-        setInfo(profile)
         findAllMovies()
+        setInfo(profile)
     }, [])
 
     const movies = useSelector((state) => state.movies);
     let movie = movies.find(mv => mv.imdbID == imdbID);
 
     const handleLike = async () => {
+        signin(info.email,info.password)
+        setInfo(profile);
         if (status == "LIKED") {
             return;
         } else if (status == "DISLIKED") {
@@ -63,10 +66,14 @@ const OmdbDetails = () => {
         {
             movie ? await likeMovie(dispatch, movie) : await likeMovie(dispatch, newMovie)
         }
+        signin(info.email,info.password)
+        setInfo(profile);
         setStatus("LIKED");
     }
 
     const handleDislike = async () => {
+        signin(info.email,info.password)
+        setInfo(profile);
         if (status == "DISLIKED") {
             return;
         } else if (status == "LIKED") {
@@ -97,6 +104,8 @@ const OmdbDetails = () => {
             movie ? await dislikeMovie(dispatch, movie) : await dislikeMovie(dispatch, newMovie)
         }
         setStatus("DISLIKED");
+        signin(info.email,info.password)
+        setInfo(profile);
     }
 
     let id = movieDetails.imdbID

@@ -2,9 +2,8 @@ import {findAllUsers} from "../../../actions/users-actions";
 import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
-import {useProfile} from "../../../context/profile-context";
 import axios from "axios";
-import ReviewItem from "../../Blog/RenderReviews/renderReviewItem";
+import ReviewItemLinkedToMovie from "../../Blog/RenderReviews/renderReviewItemLinkedToMovie";
 
 const AnonUser = () => {
     const {pID} = useParams()
@@ -48,7 +47,7 @@ const AnonUser = () => {
 
                 {
                     reviewedMovies.map(review => {
-                        return (<ReviewItem review={review}/>);
+                        return (<ReviewItemLinkedToMovie review={review}/>);
                     })
                 }
 
@@ -61,7 +60,7 @@ const AnonUser = () => {
                  positiveMovies.map(movie =>
                                         <li className="list-group-item">
                                             <Link to={`/details/${movie.imdbID}`}>
-                                                <img src={movie.poster} className="me-2" height={60}/>
+                                                <img src={movie.poster} className="me-2" height={100}/>
                                                 {movie.title}
                                             </Link>
                                         </li>
@@ -76,7 +75,7 @@ const AnonUser = () => {
                  negativeMovies.map(movie =>
                                         <li className="list-group-item">
                                             <Link to={`/details/${movie.imdbID}`}>
-                                                <img src={movie.poster} className="me-2" height={60}/>
+                                                <img src={movie.poster} className="me-2" height={100}/>
                                                 {movie.title}
                                             </Link>
                                         </li>
